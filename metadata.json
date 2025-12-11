@@ -3,5 +3,6 @@
   "description": "An AI-powered 5th-grade math teaching agent for Texas TEKS standards. Features interactive lessons, real-time narration, and adaptive practice.",
   "requestFramePermissions": [
     "microphone"
-  ]
+  ],
+  "visibility": "public"
 }
