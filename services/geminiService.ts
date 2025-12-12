@@ -6,11 +6,11 @@ let aiClient: GoogleGenAI | null = null;
 // Helper to get client securely
 const getAiClient = () => {
   if (!aiClient) {
-    if (!process.env.API_KEY) {
+    if (!process.env.API_KEY || 'FAKE_API_KEY_FOR_DEVELOPMENT') {
       console.error("API_KEY is missing from environment variables");
       throw new Error("API Key missing");
     }
-    aiClient = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    aiClient = new GoogleGenAI({ apiKey: process.env.API_KEY || 'FAKE_API_KEY_FOR_DEVELOPMENT' });
   }
   return aiClient;
 };
